@@ -1,0 +1,15 @@
+#!/bin/bash
+
+HOME=$PWD
+
+#compile the main Enrollment code 
+if [ "$1" == "Enrollment" ]; then
+	cd $HOME/src/Enrollment;
+	javac -d $HOME/bin/Enrollment *.java;
+fi
+
+#compile the data writer code
+if [ "$1" == "Writer" ]; then
+	cd $HOME/src/DataWriter;
+	javac -d $HOME/bin/DataWriter *.java
+fi

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+HOME=$PWD
+
+#run the main Enrollment code 
+if [ "$1" == "Enrollment" ]; then
+	cd $HOME/bin/Enrollment;
+	java Execute;
+fi
+
+#run the data writer code
+if [ "$1" == "Writer" ]; then
+	cd $HOME/bin/DataWriter;
+	java DataWriter;
+fi
