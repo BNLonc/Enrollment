@@ -2,14 +2,25 @@
 
 HOME=$PWD
 
-#compile the main Enrollment code 
-if [ "$1" == "Enrollment" ]; then
+if [ "$1" == "" ]; then
+	#compile everything
+	echo "Compiling everything";
 	cd $HOME/src/Enrollment;
 	javac -d $HOME/bin/Enrollment *.java;
-fi
-
-#compile the data writer code
-if [ "$1" == "Writer" ]; then
 	cd $HOME/src/DataWriter;
 	javac -d $HOME/bin/DataWriter *.java
+elif [ "$1" == "e" ]; then
+	#compile the main Enrollment code 
+	echo "Compiling the Enrollment code";
+	cd $HOME/src/Enrollment;
+	javac -d $HOME/bin/Enrollment *.java
+elif [ "$1" == "w" ]; then
+	#compile the data writer code
+	echo "Compiling the DataWriter code";
+	cd $HOME/src/DataWriter;
+	javac -d $HOME/bin/DataWriter *.java
+else 
+	echo "Couldn't understand argument, use \"\", \"e\", or \"w\"";
 fi
+
+

@@ -2,14 +2,14 @@
 
 HOME=$PWD
 
-#run the main Enrollment code 
-if [ "$1" == "Enrollment" ]; then
+if [ "$1" == "e" ]; then
+	#run the main Enrollment code 
 	cd $HOME/bin/Enrollment;
 	java Execute;
-fi
-
-#run the data writer code
-if [ "$1" == "Writer" ]; then
+elif [ "$1" == "w" ]; then
+	#run the data writer code
 	cd $HOME/bin/DataWriter;
 	java DataWriter;
+else 
+	echo "Couldn't understand argument, use \"e\" or \"w\""
 fi
